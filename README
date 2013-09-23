@@ -1,0 +1,29 @@
+Keyboard Toolbar
+
+Keyboard toolbar is a custom class for iOS applications using it user can implement the input control's input accessory view functionality.
+
+When we use multiple text views then we face the problem of hiding the keyboard then we use this custom class to move between them and hide the keyboard.
+
+This class have a toolbar on which I added one segmented control with Previous & next button items to move between the input controls and a button named Done to hide the keyboard.
+
+To implement it in your project you only have to add the Keyboard Toolbar folder to your project which have three files:
+
+KeyboardToolbar.h
+KeyboardToolbar.m and
+KeyboardToolbar.xib.
+
+Wherever you want to implement it you have to import KeyboardToolbar.h file to that .h file and implement KeyboardToolbarDelegate:
+
+- (void)doneButtonPressed;
+- (void)prevButtonPressed;
+- (void)nextButtonPressed;
+
+In doneButtonPressed delegate you have to resignFirstResponder the active input control.
+In prevButtonPressed delegate you have to implement the move to prev input control funtionality.
+In nextButtonPressed delegate you have to implement the move to next input control funtionality.
+
+I implemented the previous and next functionality using the mutable array of input fields and the text views place holder functionality using mutable dictionary.
+
+You can also implement the move of the input fields using animation as I implemented in the sample code using scroll view i moved the input fields with animation.
+
+If you face any difficulty to implement then you can contact me using my personal email address yash.vyas.29@gmail.com.
